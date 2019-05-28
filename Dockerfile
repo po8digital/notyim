@@ -21,7 +21,8 @@ RUN \
 # This is to make use of docker cache
 COPY Gemfile Gemfile.lock .ruby-version  ./
 RUN \
-  bundle install --jobs 20 --retry 5
+  bundle install --jobs 20 --retry 5 && \
+  rails db:seed
 
 COPY . /app
 

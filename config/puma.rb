@@ -52,4 +52,4 @@ workers ENV.fetch('WEB_CONCURRENCY') { 2 }
 
 # Allow puma to be restarted by `rails restart` command.
 # plugin :tmp_restart
-directory '/var/www/trinity/current' if ENV.fetch('RAILS_ENV') == 'production'
+directory ENV.fetch('TRINITY_HOME') { '/var/www/trinity/current' } if ENV.fetch('RAILS_ENV') == 'production'
