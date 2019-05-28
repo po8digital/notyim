@@ -6,6 +6,8 @@ production:
         write:
           w: 1
         max_pool_size: 50
+        user: <%= ENV['MONGODB_USER'] || "root" %>
+        password: <%= ENV['MONGODB_PASS'] || "" %>
 
 development:
   # Configure available database clients. (required)
